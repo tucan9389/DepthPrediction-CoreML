@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="337.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.40175513699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-ag-fAw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-ag-fAw" customClass="DrawingHeatmapView" customModule="DepthPrediction_CoreML" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="455.5" width="414" height="337.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -41,8 +40,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3dt-C9-H39">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="UJn-Qj-WLu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="UJn-Qj-WLu">
+                            <connections>
+                                <action selector="tapCamera:" destination="BYZ-38-t0r" id="gKp-X3-gOq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="drawingView" destination="Lag-ag-fAw" id="b3i-es-rNi"/>
+                        <outlet property="mainImageView" destination="HYX-v1-DXe" id="O8S-1D-eAo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,6 +80,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gnV-An-c8Y" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OOy-2d-Ny6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
