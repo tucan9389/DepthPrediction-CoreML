@@ -15,6 +15,7 @@
 		71BBE02922E2D3A900E74F11 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02822E2D3A900E74F11 /* FCRN.mlmodel */; };
 		71BBE02B22E2D3AD00E74F11 /* FCRNFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02A22E2D3AD00E74F11 /* FCRNFP16.mlmodel */; };
 		71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */; };
+		71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		71BBE02822E2D3A900E74F11 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRN.mlmodel; sourceTree = "<group>"; };
 		71BBE02A22E2D3AD00E74F11 /* FCRNFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRNFP16.mlmodel; sourceTree = "<group>"; };
 		71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHeatmapView.swift; sourceTree = "<group>"; };
+		71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				71BBE01622E2D2EB00E74F11 /* AppDelegate.swift */,
 				71BBE01822E2D2EB00E74F11 /* StillImageViewController.swift */,
 				71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */,
+				71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */,
 				71BBE02C22E2D3B300E74F11 /* mlmodel */,
 				71BBE01D22E2D2EC00E74F11 /* Assets.xcassets */,
 				71BBE01F22E2D2EC00E74F11 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				71BBE01922E2D2EB00E74F11 /* StillImageViewController.swift in Sources */,
 				71BBE02922E2D3A900E74F11 /* FCRN.mlmodel in Sources */,
 				71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */,
+				71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */,
 				71BBE02B22E2D3AD00E74F11 /* FCRNFP16.mlmodel in Sources */,
 				71BBE01722E2D2EB00E74F11 /* AppDelegate.swift in Sources */,
 			);
