@@ -20,28 +20,32 @@ class HeatmapPostProcessor {
         
         var convertedHeatmap: Array<Array<Double>> = Array(repeating: Array(repeating: 0.0, count: heatmap_w), count: heatmap_h)
         
-//        for k in 0..<keypoint_number {
+        var minimumValue: Double = Double.greatestFiniteMagnitude
+        var maximumValue: Double = -Double.greatestFiniteMagnitude
+        
         for i in 0..<heatmap_w {
             for j in 0..<heatmap_h {
                 let index = i*(heatmap_h) + j
                 let confidence = heatmaps[index].doubleValue
                 guard confidence > 0 else { continue }
                 convertedHeatmap[j][i] = confidence
+                
+                if minimumValue > confidence {
+                    minimumValue = confidence
+                }
+                if maximumValue < confidence {
+                    maximumValue = confidence
+                }
             }
         }
-//        }
         
-//        convertedHeatmap = convertedHeatmap.map { row in
-//            return row.map { element in
-//                if element > 1.0 {
-//                    return 1.0
-//                } else if element < 0 {
-//                    return 0.0
-//                } else {
-//                    return element
-//                }
-//            }
-//        }
+        let minmaxGap = maximumValue - minimumValue
+        
+        for i in 0..<heatmap_w {
+            for j in 0..<heatmap_h {
+                convertedHeatmap[j][i] = (convertedHeatmap[j][i] - minimumValue) / minmaxGap
+            }
+        }
         
         return convertedHeatmap
     }

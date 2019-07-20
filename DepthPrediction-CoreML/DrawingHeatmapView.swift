@@ -36,7 +36,7 @@ class DrawingHeatmapView: UIView {
                     let alpha: CGFloat = CGFloat(value)
                     guard alpha > 0 else { continue; }
                     
-                    let hue: CGFloat = abs(1 - alpha) * (240.0 / 360.0)
+                    let hue: CGFloat = alpha * (240.0 / 360.0)
                     
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
                     
