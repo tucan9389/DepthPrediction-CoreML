@@ -55,17 +55,89 @@
             </objects>
             <point key="canvasLocation" x="2075.36231884058" y="-536.38392857142856"/>
         </scene>
-        <!--Item-->
+        <!--Live Image-->
         <scene sceneID="SaG-TN-B8Q">
             <objects>
-                <viewController id="edf-aQ-qA1" sceneMemberID="viewController">
+                <viewController id="edf-aQ-qA1" customClass="LiveImageViewController" customModule="DepthPrediction_CoreML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="noJ-LW-AEx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-GS-VVI">
+                                <rect key="frame" x="0.0" y="73" width="414" height="413"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oqd-GS-VVI" secondAttribute="height" multiplier="1:1" constant="1" id="KT0-dN-LCM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-nV-M8I">
+                                <rect key="frame" x="0.0" y="44" width="414" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-Jq-g1X">
+                                        <rect key="frame" x="16" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Execution: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7iV-kd-EfY">
+                                        <rect key="frame" x="146.5" y="8" width="121" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fps: xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-EA-MVi">
+                                        <rect key="frame" x="277.5" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80182470029999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tKJ-EA-MVi" firstAttribute="width" secondItem="VxH-Jq-g1X" secondAttribute="width" id="1v5-dV-TCy"/>
+                                    <constraint firstAttribute="bottom" secondItem="VxH-Jq-g1X" secondAttribute="bottom" constant="8" id="CHk-ts-Shb"/>
+                                    <constraint firstItem="7iV-kd-EfY" firstAttribute="baseline" secondItem="VxH-Jq-g1X" secondAttribute="baseline" id="CMK-go-pOh"/>
+                                    <constraint firstItem="7iV-kd-EfY" firstAttribute="leading" secondItem="VxH-Jq-g1X" secondAttribute="trailing" constant="10" id="dzH-W2-HoC"/>
+                                    <constraint firstAttribute="trailing" secondItem="tKJ-EA-MVi" secondAttribute="trailing" constant="16" id="m8Y-C8-gbh"/>
+                                    <constraint firstItem="VxH-Jq-g1X" firstAttribute="centerY" secondItem="ULK-nV-M8I" secondAttribute="centerY" id="mg1-ld-oUk"/>
+                                    <constraint firstItem="VxH-Jq-g1X" firstAttribute="top" secondItem="ULK-nV-M8I" secondAttribute="top" constant="8" id="qRE-cn-Heh"/>
+                                    <constraint firstItem="tKJ-EA-MVi" firstAttribute="centerY" secondItem="ULK-nV-M8I" secondAttribute="centerY" id="rNZ-iG-sI1"/>
+                                    <constraint firstItem="7iV-kd-EfY" firstAttribute="width" secondItem="VxH-Jq-g1X" secondAttribute="width" id="rY9-l8-q7w"/>
+                                    <constraint firstItem="VxH-Jq-g1X" firstAttribute="leading" secondItem="ULK-nV-M8I" secondAttribute="leading" constant="16" id="yee-Ru-fbq"/>
+                                    <constraint firstItem="tKJ-EA-MVi" firstAttribute="leading" secondItem="7iV-kd-EfY" secondAttribute="trailing" constant="10" id="yu9-eQ-bUL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKp-wK-9za" customClass="DrawingHeatmapView" customModule="DepthPrediction_CoreML" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="490" width="414" height="323"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gdC-gL-MVz" firstAttribute="trailing" secondItem="ULK-nV-M8I" secondAttribute="trailing" id="0Pg-eI-p99"/>
+                            <constraint firstItem="oqd-GS-VVI" firstAttribute="leading" secondItem="gdC-gL-MVz" secondAttribute="leading" id="5vN-P4-RlE"/>
+                            <constraint firstItem="gdC-gL-MVz" firstAttribute="trailing" secondItem="oqd-GS-VVI" secondAttribute="trailing" id="7k9-kd-NAL"/>
+                            <constraint firstItem="oqd-GS-VVI" firstAttribute="top" secondItem="ULK-nV-M8I" secondAttribute="bottom" constant="4" id="E7f-h2-m3u"/>
+                            <constraint firstItem="qKp-wK-9za" firstAttribute="leading" secondItem="gdC-gL-MVz" secondAttribute="leading" id="Ke3-pH-NcT"/>
+                            <constraint firstItem="ULK-nV-M8I" firstAttribute="top" secondItem="gdC-gL-MVz" secondAttribute="top" id="RLC-yo-6W1"/>
+                            <constraint firstItem="qKp-wK-9za" firstAttribute="top" secondItem="oqd-GS-VVI" secondAttribute="bottom" constant="4" id="Rpl-hW-bRk"/>
+                            <constraint firstItem="ULK-nV-M8I" firstAttribute="leading" secondItem="gdC-gL-MVz" secondAttribute="leading" id="Uel-qX-Tsk"/>
+                            <constraint firstItem="gdC-gL-MVz" firstAttribute="trailing" secondItem="qKp-wK-9za" secondAttribute="trailing" id="ja3-PE-IB3"/>
+                            <constraint firstItem="gdC-gL-MVz" firstAttribute="bottom" secondItem="qKp-wK-9za" secondAttribute="bottom" id="lVd-zX-pwf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gdC-gL-MVz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EZu-KF-uOx"/>
+                    <tabBarItem key="tabBarItem" title="Live Image" id="EZu-KF-uOx"/>
+                    <connections>
+                        <outlet property="drawingView" destination="qKp-wK-9za" id="hTF-MD-oL0"/>
+                        <outlet property="etimeLabel" destination="7iV-kd-EfY" id="QDa-N0-vio"/>
+                        <outlet property="fpsLabel" destination="tKJ-EA-MVi" id="XdJ-xd-l3x"/>
+                        <outlet property="inferenceLabel" destination="VxH-Jq-g1X" id="Jfz-0d-0A1"/>
+                        <outlet property="videoPreview" destination="oqd-GS-VVI" id="xPG-gw-n1Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tty-tA-CDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,8 +173,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OZJ-yh-xc5" kind="relationship" relationship="viewControllers" id="cqG-lL-EUE"/>
                         <segue destination="edf-aQ-qA1" kind="relationship" relationship="viewControllers" id="b32-fX-2Jc"/>
+                        <segue destination="OZJ-yh-xc5" kind="relationship" relationship="viewControllers" id="cqG-lL-EUE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdh-KL-NOd" userLabel="First Responder" sceneMemberID="firstResponder"/>

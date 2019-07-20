@@ -17,6 +17,8 @@
 		71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */; };
 		71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */; };
 		71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */; };
+		71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03322E2EB8700E74F11 /* Measure.swift */; };
+		71BBE03622E2EC1400E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03522E2EC1400E74F11 /* VideoCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHeatmapView.swift; sourceTree = "<group>"; };
 		71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
 		71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
+		71BBE03322E2EB8700E74F11 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		71BBE03522E2EC1400E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +70,12 @@
 			children = (
 				71BBE01A22E2D2EB00E74F11 /* Main.storyboard */,
 				71BBE01622E2D2EB00E74F11 /* AppDelegate.swift */,
-				71BBE01822E2D2EB00E74F11 /* StillImageViewController.swift */,
 				71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */,
+				71BBE01822E2D2EB00E74F11 /* StillImageViewController.swift */,
 				71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */,
 				71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */,
+				71BBE03522E2EC1400E74F11 /* VideoCapture.swift */,
+				71BBE03322E2EB8700E74F11 /* Measure.swift */,
 				71BBE02C22E2D3B300E74F11 /* mlmodel */,
 				71BBE01D22E2D2EC00E74F11 /* Assets.xcassets */,
 				71BBE01F22E2D2EC00E74F11 /* LaunchScreen.storyboard */,
@@ -160,7 +166,9 @@
 			files = (
 				71BBE01922E2D2EB00E74F11 /* StillImageViewController.swift in Sources */,
 				71BBE02922E2D3A900E74F11 /* FCRN.mlmodel in Sources */,
+				71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */,
 				71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */,
+				71BBE03622E2EC1400E74F11 /* VideoCapture.swift in Sources */,
 				71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */,
 				71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */,
 				71BBE02B22E2D3AD00E74F11 /* FCRNFP16.mlmodel in Sources */,
