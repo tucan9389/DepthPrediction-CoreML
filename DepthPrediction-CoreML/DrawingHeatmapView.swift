@@ -33,13 +33,20 @@ class DrawingHeatmapView: UIView {
             for j in 0..<heatmap_h {
                 for i in 0..<heatmap_w {
                     let value = heatmap[i][j]
-                    let alpha: CGFloat = CGFloat(value)
-                    guard alpha > 0 else { continue; }
+                    var alpha: CGFloat = CGFloat(value)
+                    if alpha > 1 {
+                        alpha = 1
+                    } else if alpha < 0 {
+                        alpha = 0
+                    }
                     
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
                     
-                    // let hue: CGFloat = alpha * (240.0 / 360.0)
-                    // let color: UIColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 0.94)
+                    // color
+                    //let hue: CGFloat = alpha * (240.0 / 360.0)
+                    //let color: UIColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 0.94)
+                    
+                    // gray
                     let color: UIColor = UIColor(white: 1-alpha, alpha: 1)
                     
                     let bpath: UIBezierPath = UIBezierPath(rect: rect)

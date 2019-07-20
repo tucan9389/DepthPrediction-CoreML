@@ -8,7 +8,7 @@ This project is Depth Prediction on iOS with Core ML.<br>If you are interested i
 
 | Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
 | ------------ | ------------ | ------------ | ------------ |
-| ![](resource/IMG_3611.PNG) | ![](resource/IMG_3612.PNG) | ![](resource/IMG_3613.PNG) | ![](resource/IMG_3614.PNG) |
+| ![](resource/IMG_3623.PNG) | ![](resource/IMG_3626.PNG) | ![](resource/IMG_3627.PNG) | ![](resource/IMG_3629.PNG) |
 
 ## How it works
 

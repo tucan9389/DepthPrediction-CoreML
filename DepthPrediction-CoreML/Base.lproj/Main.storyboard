@@ -17,22 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYX-v1-DXe">
-                                <rect key="frame" x="0.0" y="108" width="414" height="337.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYX-v1-DXe">
+                                <rect key="frame" x="0.0" y="108" width="414" height="447"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.40175513699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HYX-v1-DXe" secondAttribute="height" multiplier="304:228" priority="750" id="B9G-gc-8LD"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-ag-fAw" customClass="DrawingHeatmapView" customModule="DepthPrediction_CoreML" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="455.5" width="414" height="337.5"/>
+                                <rect key="frame" x="55" y="565" width="304" height="228"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="iqp-Kv-aae"/>
+                                    <constraint firstAttribute="width" constant="304" id="rDt-vu-Yga"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Lag-ag-fAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0zP-h7-3q2"/>
                             <constraint firstItem="HYX-v1-DXe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8sR-8C-Gk6"/>
                             <constraint firstItem="HYX-v1-DXe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="A4h-Uk-Uf0"/>
-                            <constraint firstItem="Lag-ag-fAw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DSJ-Fl-0kS"/>
-                            <constraint firstItem="Lag-ag-fAw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MvQ-Pf-UIq"/>
-                            <constraint firstItem="Lag-ag-fAw" firstAttribute="height" secondItem="HYX-v1-DXe" secondAttribute="height" id="Uwk-b0-fVN"/>
                             <constraint firstItem="Lag-ag-fAw" firstAttribute="top" secondItem="HYX-v1-DXe" secondAttribute="bottom" constant="10" id="eOw-wE-GH3"/>
                             <constraint firstItem="HYX-v1-DXe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p8z-1U-j7L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lag-ag-fAw" secondAttribute="bottom" constant="20" id="qUc-qa-m18"/>
@@ -64,31 +69,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-GS-VVI">
-                                <rect key="frame" x="0.0" y="87" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="73" width="414" height="498"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oqd-GS-VVI" secondAttribute="height" multiplier="3:4" priority="750" id="jfa-cc-w3n"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-nV-M8I">
-                                <rect key="frame" x="0.0" y="44" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-Jq-g1X">
-                                        <rect key="frame" x="16" y="8" width="120.5" height="23"/>
+                                        <rect key="frame" x="16" y="8" width="120.5" height="9"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
                                         <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Execution: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7iV-kd-EfY">
-                                        <rect key="frame" x="146.5" y="15" width="121" height="9"/>
+                                        <rect key="frame" x="146.5" y="8" width="121" height="9"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
                                         <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fps: xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-EA-MVi">
-                                        <rect key="frame" x="277.5" y="15" width="120.5" height="9"/>
+                                        <rect key="frame" x="277.5" y="8" width="120.5" height="9"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
                                         <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,11 +116,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKp-wK-9za" customClass="DrawingHeatmapView" customModule="DepthPrediction_CoreML" customModuleProvider="target">
-                                <rect key="frame" x="143" y="643" width="128" height="160"/>
+                                <rect key="frame" x="55" y="575" width="304" height="228"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="0d4-xY-Rye"/>
-                                    <constraint firstAttribute="height" constant="160" id="Nwy-bV-0lr"/>
+                                    <constraint firstAttribute="width" constant="304" id="0d4-xY-Rye"/>
+                                    <constraint firstAttribute="height" constant="228" id="Nwy-bV-0lr"/>
                                 </constraints>
                             </view>
                         </subviews>
