@@ -36,11 +36,11 @@ class DrawingHeatmapView: UIView {
                     let alpha: CGFloat = CGFloat(value)
                     guard alpha > 0 else { continue; }
                     
-                    let hue: CGFloat = alpha * (240.0 / 360.0)
-                    
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
                     
-                    let color: UIColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 0.94)
+                    // let hue: CGFloat = alpha * (240.0 / 360.0)
+                    // let color: UIColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 0.94)
+                    let color: UIColor = UIColor(white: 1-alpha, alpha: 1)
                     
                     let bpath: UIBezierPath = UIBezierPath(rect: rect)
                     

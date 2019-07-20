@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Vision
 
 class LiveImageViewController: UIViewController {
 
@@ -21,8 +22,22 @@ class LiveImageViewController: UIViewController {
     // MARK: - AV Properties
     var videoCapture: VideoCapture!
     
+    // MARK - Core ML model
+    // FCRN(iOS1+), MobileNetV2(iOS1+)
+    let estimationModel = FCRN()
+    
+    // MARK: - Vision Properties
+    var request: VNCoreMLRequest?
+    var visionModel: VNCoreMLModel?
+    
+    let postprocessor = HeatmapPostProcessor()
+    
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup ml model
+        setUpModel()
         
         // setup camera
         setUpCamera()
@@ -43,8 +58,18 @@ class LiveImageViewController: UIViewController {
         self.videoCapture.stop()
     }
     
-    // MARK: - 초기 세팅
+    // MARK: - Setup Core ML
+    func setUpModel() {
+        if let visionModel = try? VNCoreMLModel(for: estimationModel.model) {
+            self.visionModel = visionModel
+            request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
+            request?.imageCropAndScaleOption = .scaleFill
+        } else {
+            fatalError()
+        }
+    }
     
+    // MARK: - Setup camera
     func setUpCamera() {
         videoCapture = VideoCapture()
         videoCapture.delegate = self
@@ -80,7 +105,32 @@ extension LiveImageViewController: VideoCaptureDelegate {
         
         // the captured image from camera is contained on pixelBuffer
         if let pixelBuffer = pixelBuffer {
-            // Do something
+            // predict!
+            predict(with: pixelBuffer)
+        }
+    }
+}
+
+// MARK: - Inference
+extension LiveImageViewController {
+    // prediction
+    func predict(with pixelBuffer: CVPixelBuffer) {
+        guard let request = request else { fatalError() }
+        
+        // vision framework configures the input size of image following our model's input configuration automatically
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
+        try? handler.perform([request])
+    }
+    
+    // post-processing
+    func visionRequestDidComplete(request: VNRequest, error: Error?) {
+        if let observations = request.results as? [VNCoreMLFeatureValueObservation],
+            let heatmap = observations.first?.featureValue.multiArrayValue {
+            
+            let convertedHeatmap = postprocessor.convertTo2DArray(from: heatmap)
+            DispatchQueue.main.async { [weak self] in
+                self?.drawingView.heatmap = convertedHeatmap
+            }
         }
     }
 }
