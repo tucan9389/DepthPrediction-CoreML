@@ -6,9 +6,9 @@
 
 This project is Depth Prediction on iOS with Core ML.<br>If you are interested in iOS + Machine Learning, visit [here](https://github.com/motlabs/iOS-Proejcts-with-ML-Models) you can see various DEMOs.<br>
 
-| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
-| ------------ | ------------ | ------------ | ------------ |
-| ![](resource/IMG_3623.PNG) | ![](resource/IMG_3626.PNG) | ![](resource/IMG_3627.PNG) | ![](resource/IMG_3629.PNG) |
+| GIF demo 1 | Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
+| ![](resource/IMG_0129.gif) | ![](resource/IMG_3623.PNG) | ![](resource/IMG_3626.PNG) | ![](resource/IMG_3627.PNG) | ![](resource/IMG_3629.PNG) |
 
 ## How it works
 
