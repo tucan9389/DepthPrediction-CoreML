@@ -18,7 +18,7 @@ class StillImageViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     
     // MARK - Core ML model
-    // FCRN(iOS1+), MobileNetV2(iOS1+)
+    // FCRN(iOS11+), FCRNFP16(iOS11+)
     let estimationModel = FCRN()
     
     // MARK: - Vision Properties

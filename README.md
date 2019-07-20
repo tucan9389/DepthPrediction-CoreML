@@ -17,7 +17,7 @@ This project is Depth Prediction on iOS with Core ML.<br>If you are interested i
 ## Requirements
 
 - Xcode 10.2+
-- iOS 12.0+
+- iOS 11.0+
 - Swift 5
 
 ## Model
