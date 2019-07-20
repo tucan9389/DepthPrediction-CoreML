@@ -32,6 +32,9 @@ class LiveImageViewController: UIViewController {
     
     let postprocessor = HeatmapPostProcessor()
     
+    // MARK: - Performance Measurement Property
+    private let 👨‍🔧 = 📏()
+    
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,9 @@ class LiveImageViewController: UIViewController {
         
         // setup camera
         setUpCamera()
+        
+        // setup delegate for performance measurement
+        👨‍🔧.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,6 +111,9 @@ extension LiveImageViewController: VideoCaptureDelegate {
         
         // the captured image from camera is contained on pixelBuffer
         if let pixelBuffer = pixelBuffer {
+            // start of measure
+            self.👨‍🔧.🎬👏()
+            
             // predict!
             predict(with: pixelBuffer)
         }
@@ -124,13 +133,33 @@ extension LiveImageViewController {
     
     // post-processing
     func visionRequestDidComplete(request: VNRequest, error: Error?) {
+        
+        self.👨‍🔧.🏷(with: "endInference")
+        
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let heatmap = observations.first?.featureValue.multiArrayValue {
             
             let convertedHeatmap = postprocessor.convertTo2DArray(from: heatmap)
             DispatchQueue.main.async { [weak self] in
+                // update result
                 self?.drawingView.heatmap = convertedHeatmap
+                
+                // end of measure
+                self?.👨‍🔧.🎬🤚()
             }
+        } else {
+            // end of measure
+            self.👨‍🔧.🎬🤚()
         }
+    }
+}
+
+// MARK: - 📏(Performance Measurement) Delegate
+extension LiveImageViewController: 📏Delegate {
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
+        //print(executionTime, fps)
+        self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
+        self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
+        self.fpsLabel.text = "fps: \(fps)"
     }
 }
