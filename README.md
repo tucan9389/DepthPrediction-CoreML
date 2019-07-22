@@ -35,7 +35,18 @@ Download model from [apple's model page](https://developer.apple.com/machine-lea
 
 ### Inference Time
 
-> (Preparing...)
+| Device        | Inference Time | Total Time |
+| ------------- | :-----: | :-----: |
+| iPhone XS Max | **146 ms** | 155 ms |
+| iPhone XS     | **146 ms** | **151 ms** |
+| iPhone XR     | 148 ms  | 154 ms  |
+| iPhone X      | 624 ms  | 640 ms  |
+| iPhone 8+     | 621 ms  | 634 ms  |
+| iPhone 8      | 626 ms  | 639 ms  |
+| iPhone 7+     | 595 ms  | 609 ms  |
+| iPhone 7      | 612 ms  | 624 ms  |
+| iPhone 6S+    | 1038 ms | 1051 ms |
+| iPhone 6+     | 3290 ms | 3326 ms |
 
 
 ## See also
