@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnV-An-c8Y">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnV-An-c8Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,6 +33,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Lag-ag-fAw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0zP-h7-3q2"/>
@@ -42,7 +43,6 @@
                             <constraint firstItem="HYX-v1-DXe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p8z-1U-j7L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lag-ag-fAw" secondAttribute="bottom" constant="20" id="qUc-qa-m18"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3dt-C9-H39">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="UJn-Qj-WLu">
@@ -124,6 +124,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gdC-gL-MVz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gdC-gL-MVz" firstAttribute="trailing" secondItem="ULK-nV-M8I" secondAttribute="trailing" id="0Pg-eI-p99"/>
@@ -136,7 +137,6 @@
                             <constraint firstItem="ULK-nV-M8I" firstAttribute="leading" secondItem="gdC-gL-MVz" secondAttribute="leading" id="Uel-qX-Tsk"/>
                             <constraint firstItem="qKp-wK-9za" firstAttribute="centerX" secondItem="noJ-LW-AEx" secondAttribute="centerX" id="l34-hb-qyH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gdC-gL-MVz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Live Image" id="EZu-KF-uOx"/>
                     <connections>
@@ -150,6 +150,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tty-tA-CDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1367" y="137"/>
+        </scene>
+        <!--GPU Live-->
+        <scene sceneID="NvH-RO-1jg">
+            <objects>
+                <viewController id="bdS-su-R7R" customClass="LiveMetalImageViewController" customModule="DepthPrediction_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wWU-Ta-JDP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjL-w2-d4f">
+                                <rect key="frame" x="0.0" y="72" width="414" height="552"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PjL-w2-d4f" secondAttribute="height" multiplier="3:4" priority="750" id="WVo-dG-jSU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCR-YP-fij">
+                                <rect key="frame" x="0.0" y="44" width="414" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="btn-bJ-HQ5">
+                                        <rect key="frame" x="16" y="8" width="120.5" height="8"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Execution: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6KM-L9-GSe">
+                                        <rect key="frame" x="146.5" y="7.5" width="121" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fps: xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c4u-Nn-Res">
+                                        <rect key="frame" x="277.5" y="7.5" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80182470029999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="c4u-Nn-Res" firstAttribute="width" secondItem="btn-bJ-HQ5" secondAttribute="width" id="4Ph-0G-49W"/>
+                                    <constraint firstItem="btn-bJ-HQ5" firstAttribute="top" secondItem="vCR-YP-fij" secondAttribute="top" constant="8" id="9ef-Kl-alL"/>
+                                    <constraint firstItem="6KM-L9-GSe" firstAttribute="centerY" secondItem="btn-bJ-HQ5" secondAttribute="centerY" id="Psc-nw-YKN"/>
+                                    <constraint firstItem="btn-bJ-HQ5" firstAttribute="leading" secondItem="vCR-YP-fij" secondAttribute="leading" constant="16" id="Ubn-FB-hwr"/>
+                                    <constraint firstItem="6KM-L9-GSe" firstAttribute="width" secondItem="btn-bJ-HQ5" secondAttribute="width" id="X6d-4f-eed"/>
+                                    <constraint firstAttribute="bottom" secondItem="btn-bJ-HQ5" secondAttribute="bottom" constant="8" id="YPu-uj-5vg"/>
+                                    <constraint firstItem="btn-bJ-HQ5" firstAttribute="centerY" secondItem="vCR-YP-fij" secondAttribute="centerY" id="cbD-Uf-tiu"/>
+                                    <constraint firstItem="6KM-L9-GSe" firstAttribute="leading" secondItem="btn-bJ-HQ5" secondAttribute="trailing" constant="10" id="f9H-IX-AKi"/>
+                                    <constraint firstAttribute="trailing" secondItem="c4u-Nn-Res" secondAttribute="trailing" constant="16" id="kbY-Pe-yY5"/>
+                                    <constraint firstItem="c4u-Nn-Res" firstAttribute="leading" secondItem="6KM-L9-GSe" secondAttribute="trailing" constant="10" id="oba-MD-g7C"/>
+                                    <constraint firstAttribute="height" constant="24" id="qqG-Yt-Nje"/>
+                                    <constraint firstItem="c4u-Nn-Res" firstAttribute="centerY" secondItem="vCR-YP-fij" secondAttribute="centerY" id="unL-QE-EWr"/>
+                                </constraints>
+                            </view>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="bre-E3-kcp" customClass="MetalVideoView" customModule="DepthPrediction_CoreML" customModuleProvider="target">
+                                <rect key="frame" x="94" y="628" width="226" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bre-E3-kcp" secondAttribute="height" multiplier="160:128" id="IrL-1S-kG0"/>
+                                </constraints>
+                            </mtkView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gVS-MR-fcX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vCR-YP-fij" secondAttribute="trailing" id="4kz-I3-dTr"/>
+                            <constraint firstItem="vCR-YP-fij" firstAttribute="leading" secondItem="gVS-MR-fcX" secondAttribute="leading" id="6wW-Bh-XcN"/>
+                            <constraint firstItem="gVS-MR-fcX" firstAttribute="bottom" secondItem="bre-E3-kcp" secondAttribute="bottom" constant="4" id="7MT-71-jjc"/>
+                            <constraint firstItem="bre-E3-kcp" firstAttribute="centerX" secondItem="wWU-Ta-JDP" secondAttribute="centerX" id="Bgh-zw-fIj"/>
+                            <constraint firstItem="vCR-YP-fij" firstAttribute="top" secondItem="gVS-MR-fcX" secondAttribute="top" id="Mfi-vh-kkP"/>
+                            <constraint firstAttribute="trailing" secondItem="PjL-w2-d4f" secondAttribute="trailing" id="PBS-uO-iXq"/>
+                            <constraint firstItem="PjL-w2-d4f" firstAttribute="top" secondItem="vCR-YP-fij" secondAttribute="bottom" constant="4" id="aAm-fM-XmU"/>
+                            <constraint firstItem="PjL-w2-d4f" firstAttribute="width" secondItem="PjL-w2-d4f" secondAttribute="height" multiplier="3:4" priority="750" id="dex-OJ-I6d"/>
+                            <constraint firstItem="bre-E3-kcp" firstAttribute="top" secondItem="PjL-w2-d4f" secondAttribute="bottom" constant="4" id="w2S-Wo-Vcj"/>
+                            <constraint firstItem="PjL-w2-d4f" firstAttribute="leading" secondItem="gVS-MR-fcX" secondAttribute="leading" id="zMU-YG-sND"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GPU Live" id="HOb-PD-X3H"/>
+                    <connections>
+                        <outlet property="depthmapView" destination="bre-E3-kcp" id="eq3-Qk-Wdi"/>
+                        <outlet property="etimeLabel" destination="6KM-L9-GSe" id="fvV-uW-xyC"/>
+                        <outlet property="fpsLabel" destination="c4u-Nn-Res" id="pNS-5d-ShW"/>
+                        <outlet property="inferenceLabel" destination="btn-bJ-HQ5" id="MfP-4O-cIo"/>
+                        <outlet property="videoPreview" destination="PjL-w2-d4f" id="n7p-gc-aQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3E-GK-ATr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1367" y="-1203"/>
         </scene>
         <!--Still Image-->
         <scene sceneID="q11-aU-6uU">
@@ -181,6 +272,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="bdS-su-R7R" kind="relationship" relationship="viewControllers" id="Icc-hq-en2"/>
                         <segue destination="edf-aQ-qA1" kind="relationship" relationship="viewControllers" id="b32-fX-2Jc"/>
                         <segue destination="OZJ-yh-xc5" kind="relationship" relationship="viewControllers" id="cqG-lL-EUE"/>
                     </connections>
@@ -190,4 +282,9 @@
             <point key="canvasLocation" x="261" y="-216"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
