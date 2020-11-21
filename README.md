@@ -8,7 +8,7 @@ This project is Depth Prediction on iOS with Core ML.<br>If you are interested i
 
 | GIF demo 1 | Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| ![](resource/IMG_0129.gif) | ![](resource/IMG_3623.PNG) | ![](resource/IMG_3626.PNG) | ![](resource/IMG_3627.PNG) | ![](resource/IMG_3629.PNG) |
+| <img src="https://user-images.githubusercontent.com/37643248/99881941-428dbd80-2c60-11eb-9c24-fdab5b110279.gif" width=240px> | <img src="resource/IMG_3623.PNG" width=240px> | <img src="resource/IMG_3626.PNG" width=240px> | <img src="resource/IMG_3627.PNG" width=240px> | <img src="resource/IMG_3629.PNG" width=240px> |
 
 ## How it works
 
