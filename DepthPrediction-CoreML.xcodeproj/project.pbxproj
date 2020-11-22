@@ -12,13 +12,20 @@
 		71BBE01C22E2D2EB00E74F11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBE01A22E2D2EB00E74F11 /* Main.storyboard */; };
 		71BBE01E22E2D2EC00E74F11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71BBE01D22E2D2EC00E74F11 /* Assets.xcassets */; };
 		71BBE02122E2D2EC00E74F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BBE01F22E2D2EC00E74F11 /* LaunchScreen.storyboard */; };
-		71BBE02922E2D3A900E74F11 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02822E2D3A900E74F11 /* FCRN.mlmodel */; };
-		71BBE02B22E2D3AD00E74F11 /* FCRNFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02A22E2D3AD00E74F11 /* FCRNFP16.mlmodel */; };
 		71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */; };
 		71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */; };
 		71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */; };
 		71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03322E2EB8700E74F11 /* Measure.swift */; };
 		71BBE03622E2EC1400E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03522E2EC1400E74F11 /* VideoCapture.swift */; };
+		C4A2A2BD2568DB0C001BE0BB /* LiveMetalImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */; };
+		C4A2A2C02568DB1E001BE0BB /* FCRNFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */; };
+		C4A2A2C42568DB3F001BE0BB /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */; };
+		C4A2A2C82568DBB5001BE0BB /* MetalRenderingDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2C72568DBB5001BE0BB /* MetalRenderingDevice.swift */; };
+		C4A2A2CC2568DBCA001BE0BB /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2CB2568DBCA001BE0BB /* Texture.swift */; };
+		C4A2A2CF2568DBDD001BE0BB /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2CE2568DBDD001BE0BB /* Maths.swift */; };
+		C4A2A2D22568DBE6001BE0BB /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2D12568DBE6001BE0BB /* Shaders.metal */; };
+		C4A2A2D82568DC2B001BE0BB /* MetalVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2D72568DC2B001BE0BB /* MetalVideoView.swift */; };
+		C4A2A2DB2568DC7C001BE0BB /* DepthmapTextureGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2DA2568DC7C001BE0BB /* DepthmapTextureGenerater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +36,20 @@
 		71BBE01D22E2D2EC00E74F11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71BBE02022E2D2EC00E74F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71BBE02222E2D2EC00E74F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71BBE02822E2D3A900E74F11 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRN.mlmodel; sourceTree = "<group>"; };
-		71BBE02A22E2D3AD00E74F11 /* FCRNFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRNFP16.mlmodel; sourceTree = "<group>"; };
 		71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHeatmapView.swift; sourceTree = "<group>"; };
 		71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
 		71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		71BBE03322E2EB8700E74F11 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		71BBE03522E2EC1400E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMetalImageViewController.swift; sourceTree = "<group>"; };
+		C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRNFP16.mlmodel; sourceTree = "<group>"; };
+		C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRN.mlmodel; sourceTree = "<group>"; };
+		C4A2A2C72568DBB5001BE0BB /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderingDevice.swift; sourceTree = "<group>"; };
+		C4A2A2CB2568DBCA001BE0BB /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		C4A2A2CE2568DBDD001BE0BB /* Maths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
+		C4A2A2D12568DBE6001BE0BB /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		C4A2A2D72568DC2B001BE0BB /* MetalVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalVideoView.swift; sourceTree = "<group>"; };
+		C4A2A2DA2568DC7C001BE0BB /* DepthmapTextureGenerater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthmapTextureGenerater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +84,14 @@
 			children = (
 				71BBE01A22E2D2EB00E74F11 /* Main.storyboard */,
 				71BBE01622E2D2EB00E74F11 /* AppDelegate.swift */,
+				C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */,
 				71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */,
 				71BBE01822E2D2EB00E74F11 /* StillImageViewController.swift */,
 				71BBE02D22E2D4D300E74F11 /* DrawingHeatmapView.swift */,
 				71BBE02F22E2D83600E74F11 /* HeatmapPostProcessor.swift */,
 				71BBE03522E2EC1400E74F11 /* VideoCapture.swift */,
 				71BBE03322E2EB8700E74F11 /* Measure.swift */,
+				C4A2A2C62568DBA6001BE0BB /* MetalCamera */,
 				71BBE02C22E2D3B300E74F11 /* mlmodel */,
 				71BBE01D22E2D2EC00E74F11 /* Assets.xcassets */,
 				71BBE01F22E2D2EC00E74F11 /* LaunchScreen.storyboard */,
@@ -87,10 +103,39 @@
 		71BBE02C22E2D3B300E74F11 /* mlmodel */ = {
 			isa = PBXGroup;
 			children = (
-				71BBE02822E2D3A900E74F11 /* FCRN.mlmodel */,
-				71BBE02A22E2D3AD00E74F11 /* FCRNFP16.mlmodel */,
+				C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */,
+				C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */,
 			);
 			path = mlmodel;
+			sourceTree = "<group>";
+		};
+		C4A2A2C62568DBA6001BE0BB /* MetalCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2A2C72568DBB5001BE0BB /* MetalRenderingDevice.swift */,
+				C4A2A2D72568DC2B001BE0BB /* MetalVideoView.swift */,
+				C4A2A2DA2568DC7C001BE0BB /* DepthmapTextureGenerater.swift */,
+				C4A2A2CB2568DBCA001BE0BB /* Texture.swift */,
+				C4A2A2D42568DBEB001BE0BB /* Shaders */,
+				C4A2A2D52568DBF5001BE0BB /* Utils */,
+			);
+			path = MetalCamera;
+			sourceTree = "<group>";
+		};
+		C4A2A2D42568DBEB001BE0BB /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2A2D12568DBE6001BE0BB /* Shaders.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		C4A2A2D52568DBF5001BE0BB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C4A2A2CE2568DBDD001BE0BB /* Maths.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,13 +210,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BBE01922E2D2EB00E74F11 /* StillImageViewController.swift in Sources */,
-				71BBE02922E2D3A900E74F11 /* FCRN.mlmodel in Sources */,
+				C4A2A2D82568DC2B001BE0BB /* MetalVideoView.swift in Sources */,
+				C4A2A2CC2568DBCA001BE0BB /* Texture.swift in Sources */,
+				C4A2A2C42568DB3F001BE0BB /* FCRN.mlmodel in Sources */,
+				C4A2A2C02568DB1E001BE0BB /* FCRNFP16.mlmodel in Sources */,
+				C4A2A2BD2568DB0C001BE0BB /* LiveMetalImageViewController.swift in Sources */,
 				71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */,
 				71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */,
 				71BBE03622E2EC1400E74F11 /* VideoCapture.swift in Sources */,
+				C4A2A2D22568DBE6001BE0BB /* Shaders.metal in Sources */,
+				C4A2A2DB2568DC7C001BE0BB /* DepthmapTextureGenerater.swift in Sources */,
+				C4A2A2C82568DBB5001BE0BB /* MetalRenderingDevice.swift in Sources */,
+				C4A2A2CF2568DBDD001BE0BB /* Maths.swift in Sources */,
 				71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */,
 				71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */,
-				71BBE02B22E2D3AD00E74F11 /* FCRNFP16.mlmodel in Sources */,
 				71BBE01722E2D2EB00E74F11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
