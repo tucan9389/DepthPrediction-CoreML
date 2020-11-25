@@ -12,7 +12,9 @@ This project is Depth Prediction on iOS with Core ML.<br>If you are interested i
 
 ## How it works
 
-> (Preparing...)
+> When use Metal
+
+![image](https://user-images.githubusercontent.com/37643248/100269540-0927bb80-2f9a-11eb-8871-e9e2f230274b.png)
 
 ## Requirements
 
