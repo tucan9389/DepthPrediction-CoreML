@@ -29,7 +29,7 @@ class HeatmapPostProcessor {
                     self.lastImpactTime = Date()
                 }
             }
-            print("executing")
+            //print("executing")
         }
     }
     /// Play the specified system sound.  If the system sound has been preloaded as an audio player, then play using the AVAudioSession.  If there is no corresponding player, use the `AudioServicesPlaySystemSound` function.
@@ -79,7 +79,28 @@ class HeatmapPostProcessor {
             }
         }
         
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: convertedHeatmap, options: .prettyPrinted)
+            let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)
+            if let jsonString = jsonString {
+                write(text: jsonString, to: "test1") // Test this further
+                // Copying JSONs from terminal also works
+            }
+            print(jsonString as Any)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         return convertedHeatmap
+    }
+    
+    func write(text: String, to fileNamed: String, folder: String = "SavedFiles") {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return }
+        guard let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else { return }
+        try? FileManager.default.createDirectory(atPath: writePath.path, withIntermediateDirectories: true)
+        let file = writePath.appendingPathComponent(fileNamed + ".rtf")
+        try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
     }
 }
 
