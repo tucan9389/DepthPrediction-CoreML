@@ -7,8 +7,37 @@
 //
 
 import CoreML
+import UIKit
+import AVFoundation
 
 class HeatmapPostProcessor {
+    let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+    var lastImpactTime = Date()
+    var desiredInterval: Double?
+    var hapticTimer: Timer?
+
+    init() {
+        createTimer()
+    }
+    
+    func createTimer() {
+        hapticTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            if let desiredInterval = self.desiredInterval {
+                if -self.lastImpactTime.timeIntervalSinceNow > desiredInterval {
+                    self.feedbackGenerator.impactOccurred()
+                    self.playSystemSound(id: 1103)
+                    self.lastImpactTime = Date()
+                }
+            }
+            print("executing")
+        }
+    }
+    /// Play the specified system sound.  If the system sound has been preloaded as an audio player, then play using the AVAudioSession.  If there is no corresponding player, use the `AudioServicesPlaySystemSound` function.
+    ///
+    /// - Parameter id: the id of the system sound to play
+    func playSystemSound(id: Int) {
+        AudioServicesPlaySystemSound(SystemSoundID(id))
+    }
     func convertTo2DArray(from heatmaps: MLMultiArray) -> Array<Array<Double>> {
         guard heatmaps.shape.count >= 3 else {
             print("heatmap's shape is invalid. \(heatmaps.shape)")
@@ -29,7 +58,10 @@ class HeatmapPostProcessor {
                 let confidence = heatmaps[index].doubleValue
                 guard confidence > 0 else { continue }
                 convertedHeatmap[j][i] = confidence
-                
+                if i == Int(heatmap_w/2) && j == Int(heatmap_h/2) {
+                    desiredInterval = confidence/5
+                    print("depth in the center is \(confidence)")
+                }
                 if minimumValue > confidence {
                     minimumValue = confidence
                 }
@@ -50,3 +82,4 @@ class HeatmapPostProcessor {
         return convertedHeatmap
     }
 }
+
