@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol 📏Delegate {
+protocol MeasureDelegate {
     func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double)
 }
 // Performance Measurement
-class 📏 {
+class Measure {
     
-    var delegate: 📏Delegate?
+    var delegate: MeasureDelegate?
     var distance: Double = 2.0
     var index: Int = -1
     var measurements: [Dictionary<String, Double>]
@@ -29,17 +29,17 @@ class 📏 {
     }
     
     // start
-    func 🎬👏() {
+    func start() {
         index += 1
         index %= 30
         measurements[index] = [:]
         
-        🏷(for: index, with: "start")
+        label(for: index, with: "start")
     }
     
     // stop
-    func 🎬🤚(conf: Double) {
-        🏷(for: index, with: "end")
+    func stop(conf: Double) {
+        label(for: index, with: "end")
         
         // let heatMap = HeatmapPostProcessor()
         let beforeMeasurement = getBeforeMeasurment(for: index)
@@ -58,11 +58,11 @@ class 📏 {
     }
     
     // labeling with
-    func 🏷(with msg: String? = "") {
-        🏷(for: index, with: msg)
+    func label(with msg: String? = "") {
+        label(for: index, with: msg)
     }
     
-    private func 🏷(for index: Int, with msg: String? = "") {
+    private func label(for index: Int, with msg: String? = "") {
         if let message = msg {
             measurements[index][message] = CACurrentMediaTime()
         }
@@ -73,17 +73,10 @@ class 📏 {
     }
     
     // log
-    func 🖨() {
+    func log() {
         
     }
     
-    func refreshDistance(dist: Double) {
-        if dist != nil && dist != 0 {
-            //print("Dist = \(dist)")
-            self.distance = dist
-        }
-        
-    }
 }
 
 class MeasureLogView: UIView {

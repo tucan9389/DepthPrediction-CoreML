@@ -16,7 +16,7 @@ class HeatmapPostProcessor {
     var desiredInterval: Double?
     var hapticTimer: Timer?
     var confidence: Double?
-    let measure = 📏()
+    let measure = Measure()
 
     init() {
         print("Initializing Heatmap")
@@ -76,8 +76,6 @@ class HeatmapPostProcessor {
                 if maximumValue < self.confidence! {
                     maximumValue = self.confidence!
                 }
-                //print(self.confidence!)
-                measure.refreshDistance(dist: self.confidence!)
             }
         }
         let minmaxGap = maximumValue - minimumValue
