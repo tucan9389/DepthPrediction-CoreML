@@ -137,6 +137,7 @@ class HeatmapPostProcessor {
         let file = writePath.appendingPathComponent(fileNamed + ".rtf")
         try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
     }
+    // this is just to change the git commit enough to re-commit
 }
 
 
