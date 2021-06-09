@@ -47,12 +47,7 @@ class DrawingHeatmapView: UIView {
                     //let color: UIColor = UIColor(hue: hue, saturation: 1, brightness: 1, alpha: 0.94)
 
                     // gray
-                    var color: UIColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1)
-                    if value > 0.25 {
-                        color = UIColor(white: 0, alpha: 1)
-                    } else {
-                        color = UIColor(white: 1-alpha, alpha: 1)
-                    }
+                    var color: UIColor = UIColor(white: 1-alpha, alpha: 1)
                     
                     let bpath: UIBezierPath = UIBezierPath(rect: rect)
                     

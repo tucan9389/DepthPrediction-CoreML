@@ -15,11 +15,12 @@ protocol 📏Delegate {
 class 📏 {
     
     var delegate: 📏Delegate?
-    var distance: Double?
+    var distance: Double = 2.0
     var index: Int = -1
     var measurements: [Dictionary<String, Double>]
     
     init() {
+        print("initializing object")
         let measurement = [
             "start": CACurrentMediaTime(),
             "end": CACurrentMediaTime()
@@ -37,14 +38,10 @@ class 📏 {
     }
     
     // stop
-    func 🎬🤚() {
+    func 🎬🤚(conf: Double) {
         🏷(for: index, with: "end")
         
-        let heatMap = HeatmapPostProcessor()
-        self.distance = heatMap.getDistance()
-        
-        print(self.distance)
-        
+        // let heatMap = HeatmapPostProcessor()
         let beforeMeasurement = getBeforeMeasurment(for: index)
         let currentMeasurement = measurements[index]
         if let startTime = currentMeasurement["start"],
@@ -54,7 +51,7 @@ class 📏 {
             delegate?.updateMeasure(inferenceTime: endInferenceTime - startTime,
                                     executionTime: endTime - startTime,
                                     fps: Int(1/(startTime - beforeStartTime)),
-                                    dist: self.distance!)
+                                    dist: conf)
                                     
         }
         
@@ -77,6 +74,14 @@ class 📏 {
     
     // log
     func 🖨() {
+        
+    }
+    
+    func refreshDistance(dist: Double) {
+        if dist != nil && dist != 0 {
+            //print("Dist = \(dist)")
+            self.distance = dist
+        }
         
     }
 }

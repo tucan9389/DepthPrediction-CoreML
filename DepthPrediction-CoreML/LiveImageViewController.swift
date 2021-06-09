@@ -22,7 +22,7 @@ class LiveImageViewController: UIViewController {
     
     // MARK: - AV Properties
     var videoCapture: VideoCapture!
-    
+    var distance: Double?
     // MARK - Core ML model
     // FCRN(iOS11+), FCRNFP16(iOS11+)
     let estimationModel = FCRN()
@@ -143,14 +143,14 @@ extension LiveImageViewController {
             let convertedHeatmap = postprocessor.convertTo2DArray(from: heatmap)
             DispatchQueue.main.async { [weak self] in
                 // update result
-                self?.drawingView.heatmap = convertedHeatmap
-                
+                self?.drawingView.heatmap = convertedHeatmap.0
+                self?.distance = convertedHeatmap.1
                 // end of measure
-                self?.👨‍🔧.🎬🤚()
+                self?.👨‍🔧.🎬🤚(conf: (self?.distance!)!)
             }
         } else {
             // end of measure
-            self.👨‍🔧.🎬🤚()
+            self.👨‍🔧.🎬🤚(conf: self.distance!)
         }
     }
 }

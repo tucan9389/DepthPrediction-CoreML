@@ -16,8 +16,10 @@ class HeatmapPostProcessor {
     var desiredInterval: Double?
     var hapticTimer: Timer?
     var confidence: Double?
+    let measure = 📏()
 
     init() {
+        print("Initializing Heatmap")
         createTimer()
     }
     
@@ -47,6 +49,7 @@ class HeatmapPostProcessor {
         let heatmap_w = heatmaps.shape[1].intValue
         let heatmap_h = heatmaps.shape[2].intValue
         
+        
         var convertedHeatmap: Array<Array<Double>> = Array(repeating: Array(repeating: 0.0, count: heatmap_w), count: heatmap_h)
         
         var minimumValue: Double = Double.greatestFiniteMagnitude
@@ -73,6 +76,8 @@ class HeatmapPostProcessor {
                 if maximumValue < self.confidence! {
                     maximumValue = self.confidence!
                 }
+                //print(self.confidence!)
+                measure.refreshDistance(dist: self.confidence!)
             }
         }
         let minmaxGap = maximumValue - minimumValue
@@ -107,7 +112,7 @@ class HeatmapPostProcessor {
 //            desiredInterval = 100000
 //        }
         
-        print(desiredInterval)
+        // print(desiredInterval)
         
         
 
@@ -118,7 +123,7 @@ class HeatmapPostProcessor {
                 write(text: jsonString, to: "test1") // Test this further
                 // Copying JSONs from terminal also works
             }
-            print(jsonString as Any)
+            // print(jsonString as Any)
             
         } catch {
             print(error.localizedDescription)

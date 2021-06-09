@@ -150,21 +150,23 @@ extension LiveMetalImageViewController {
             DispatchQueue.main.async { [weak self] in
                 
                 // end of measure
-                self?.👨‍🔧.🎬🤚()
+                self?.👨‍🔧.🎬🤚(conf: 0.0)
             }
         } else {
             // end of measure
-            self.👨‍🔧.🎬🤚()
+            self.👨‍🔧.🎬🤚(conf: 0.0)
         }
     }
 }
 
 // MARK: - 📏(Performance Measurement) Delegate
 extension LiveMetalImageViewController: 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
+    
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double) {
         //print(executionTime, fps)
         self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
         self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
         self.fpsLabel.text = "fps: \(fps)"
+        // self.distLabel.text = "\(dist)"
     }
 }
