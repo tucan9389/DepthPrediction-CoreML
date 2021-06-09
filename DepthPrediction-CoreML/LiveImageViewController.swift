@@ -18,6 +18,7 @@ class LiveImageViewController: UIViewController {
     @IBOutlet weak var inferenceLabel: UILabel!
     @IBOutlet weak var etimeLabel: UILabel!
     @IBOutlet weak var fpsLabel: UILabel!
+    @IBOutlet weak var distLabel: UILabel!
     
     // MARK: - AV Properties
     var videoCapture: VideoCapture!
@@ -156,10 +157,10 @@ extension LiveImageViewController {
 
 // MARK: - 📏(Performance Measurement) Delegate
 extension LiveImageViewController: 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
-        //print(executionTime, fps)
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double) {
         self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
         self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
         self.fpsLabel.text = "fps: \(fps)"
+        self.distLabel.text = "Dist: \(dist)"
     }
 }

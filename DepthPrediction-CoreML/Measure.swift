@@ -9,13 +9,13 @@
 import UIKit
 
 protocol 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int)
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double)
 }
 // Performance Measurement
 class 📏 {
     
     var delegate: 📏Delegate?
-    
+    var distance: Double?
     var index: Int = -1
     var measurements: [Dictionary<String, Double>]
     
@@ -40,6 +40,11 @@ class 📏 {
     func 🎬🤚() {
         🏷(for: index, with: "end")
         
+        let heatMap = HeatmapPostProcessor()
+        self.distance = heatMap.getDistance()
+        
+        print(self.distance)
+        
         let beforeMeasurement = getBeforeMeasurment(for: index)
         let currentMeasurement = measurements[index]
         if let startTime = currentMeasurement["start"],
@@ -48,7 +53,9 @@ class 📏 {
             let beforeStartTime = beforeMeasurement["start"] {
             delegate?.updateMeasure(inferenceTime: endInferenceTime - startTime,
                                     executionTime: endTime - startTime,
-                                    fps: Int(1/(startTime - beforeStartTime)))
+                                    fps: Int(1/(startTime - beforeStartTime)),
+                                    dist: self.distance!)
+                                    
         }
         
     }
