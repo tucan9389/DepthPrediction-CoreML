@@ -9,6 +9,7 @@
 import CoreML
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 class HeatmapPostProcessor {
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
@@ -16,6 +17,7 @@ class HeatmapPostProcessor {
     var desiredInterval: Double?
     var hapticTimer: Timer?
     var confidence: Double?
+    var everyTwo: Bool = true
     let measure = Measure()
 
     init() {
@@ -28,18 +30,35 @@ class HeatmapPostProcessor {
             if let desiredInterval = self.desiredInterval {
                 if -self.lastImpactTime.timeIntervalSinceNow > desiredInterval {
                     self.feedbackGenerator.impactOccurred()
-                    self.playSystemSound(id: 1103)
+                    if self.everyTwo {
+                        self.playSystemSound(interval: desiredInterval)
+                        self.everyTwo = false
+                    } else {
+                        self.everyTwo = true
+                    }
                     self.lastImpactTime = Date()
+                    //print("Interval: \(desiredInterval)")
                 }
             }
         }
     }
-    /// Play the specified system sound.  If the system sound has been preloaded as an audio player, then play using the AVAudioSession.  If there is no corresponding player, use the `AudioServicesPlaySystemSound` function.
-    ///
-    /// - Parameter id: the id of the system sound to play
-    func playSystemSound(id: Int) {
-        AudioServicesPlaySystemSound(SystemSoundID(id))
+    
+    // Play higher pitched sounds the shorter the interval
+    func playSystemSound(interval: Double) {
+        switch interval {
+        case 0...0.1:
+            SystemSoundID.playFileNamed(fileName: "radar-blip-plus-two", withExtenstion: "wav")
+        case 0.1...0.25:
+            SystemSoundID.playFileNamed(fileName: "radar-blip-plus-one", withExtenstion: "wav")
+        case 0.25...0.35:
+            SystemSoundID.playFileNamed(fileName: "radar-blip", withExtenstion: "wav")
+        case 0.35...0.5:
+            SystemSoundID.playFileNamed(fileName: "radar-blip-minus-one", withExtenstion: "wav")
+        default:
+            SystemSoundID.playFileNamed(fileName: "radar-blip-minus-two", withExtenstion: "wav")
+        }
     }
+    
     func convertTo2DArray(from heatmaps: MLMultiArray) -> (Array<Array<Double>>, Double) {
         guard heatmaps.shape.count >= 3 else {
             print("heatmap's shape is invalid. \(heatmaps.shape)")
@@ -140,4 +159,13 @@ class HeatmapPostProcessor {
     // this is just to change the git commit enough to re-commit
 }
 
+extension SystemSoundID {
+    static func playFileNamed(fileName: String, withExtenstion fileExtension: String) {
+        var sound: SystemSoundID = 0
+        if let soundURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension) {
+            AudioServicesCreateSystemSoundID(soundURL as CFURL, &sound)
+            AudioServicesPlaySystemSound(sound)
+        }
+    }
+}
 
