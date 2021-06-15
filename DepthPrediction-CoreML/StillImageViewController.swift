@@ -81,7 +81,7 @@ extension StillImageViewController {
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let heatmap = observations.first?.featureValue.multiArrayValue {
             
-            drawingView.heatmap = postprocessor.convertTo2DArray(from: heatmap)
+            drawingView.heatmap = postprocessor.convertTo2DArray(from: heatmap).0
         }
     }
 }

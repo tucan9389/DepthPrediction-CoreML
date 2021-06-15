@@ -34,7 +34,7 @@ class LiveMetalImageViewController: UIViewController {
     let depthmapTexutreGenerater = DepthmapTextureGenerater()
     
     // MARK: - Performance Measurement Property
-    private let 👨‍🔧 = 📏()
+    private let measure = Measure()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class LiveMetalImageViewController: UIViewController {
         setUpCamera()
         
         // setup delegate for performance measurement
-        👨‍🔧.delegate = self
+        measure.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +113,7 @@ extension LiveMetalImageViewController: VideoCaptureDelegate {
         // the captured image from camera is contained on pixelBuffer
         if let pixelBuffer = pixelBuffer {
             // start of measure
-            self.👨‍🔧.🎬👏()
+            self.measure.start()
             
             // predict!
             predict(with: pixelBuffer)
@@ -135,7 +135,7 @@ extension LiveMetalImageViewController {
     // post-processing
     func visionRequestDidComplete(request: VNRequest, error: Error?) {
         
-        self.👨‍🔧.🏷(with: "endInference")
+        self.measure.label(with: "endInference")
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let depthmap = observations.first?.featureValue.multiArrayValue {
@@ -150,21 +150,23 @@ extension LiveMetalImageViewController {
             DispatchQueue.main.async { [weak self] in
                 
                 // end of measure
-                self?.👨‍🔧.🎬🤚()
+                self?.measure.stop(conf: 0.0)
             }
         } else {
             // end of measure
-            self.👨‍🔧.🎬🤚()
+            self.measure.stop(conf: 0.0)
         }
     }
 }
 
-// MARK: - 📏(Performance Measurement) Delegate
-extension LiveMetalImageViewController: 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
+// MARK: - Measure(Performance Measurement) Delegate
+extension LiveMetalImageViewController: MeasureDelegate {
+    
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double) {
         //print(executionTime, fps)
         self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
         self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
         self.fpsLabel.text = "fps: \(fps)"
+        // self.distLabel.text = "\(dist)"
     }
 }

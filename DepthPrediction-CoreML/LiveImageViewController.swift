@@ -18,10 +18,11 @@ class LiveImageViewController: UIViewController {
     @IBOutlet weak var inferenceLabel: UILabel!
     @IBOutlet weak var etimeLabel: UILabel!
     @IBOutlet weak var fpsLabel: UILabel!
+    @IBOutlet weak var distLabel: UILabel!
     
     // MARK: - AV Properties
     var videoCapture: VideoCapture!
-    
+    var distance: Double?
     // MARK - Core ML model
     // FCRN(iOS11+), FCRNFP16(iOS11+)
     let estimationModel = FCRN()
@@ -33,7 +34,7 @@ class LiveImageViewController: UIViewController {
     let postprocessor = HeatmapPostProcessor()
     
     // MARK: - Performance Measurement Property
-    private let 👨‍🔧 = 📏()
+    private let measure = Measure()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -46,7 +47,7 @@ class LiveImageViewController: UIViewController {
         setUpCamera()
         
         // setup delegate for performance measurement
-        👨‍🔧.delegate = self
+        measure.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,7 +113,7 @@ extension LiveImageViewController: VideoCaptureDelegate {
         // the captured image from camera is contained on pixelBuffer
         if let pixelBuffer = pixelBuffer {
             // start of measure
-            self.👨‍🔧.🎬👏()
+            self.measure.start()
             
             // predict!
             predict(with: pixelBuffer)
@@ -134,7 +135,7 @@ extension LiveImageViewController {
     // post-processing
     func visionRequestDidComplete(request: VNRequest, error: Error?) {
         
-        self.👨‍🔧.🏷(with: "endInference")
+        self.measure.label(with: "endInference")
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let heatmap = observations.first?.featureValue.multiArrayValue {
@@ -142,24 +143,24 @@ extension LiveImageViewController {
             let convertedHeatmap = postprocessor.convertTo2DArray(from: heatmap)
             DispatchQueue.main.async { [weak self] in
                 // update result
-                self?.drawingView.heatmap = convertedHeatmap
-                
+                self?.drawingView.heatmap = convertedHeatmap.0
+                self?.distance = convertedHeatmap.1
                 // end of measure
-                self?.👨‍🔧.🎬🤚()
+                self?.measure.stop(conf: (self?.distance!)!)
             }
         } else {
             // end of measure
-            self.👨‍🔧.🎬🤚()
+            self.measure.stop(conf: self.distance!)
         }
     }
 }
 
-// MARK: - 📏(Performance Measurement) Delegate
-extension LiveImageViewController: 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
-        //print(executionTime, fps)
+// MARK: - Measure(Performance Measurement) Delegate
+extension LiveImageViewController: MeasureDelegate {
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int, dist: Double) {
         self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
         self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
         self.fpsLabel.text = "fps: \(fps)"
+        self.distLabel.text = "Dist: \(dist)"
     }
 }

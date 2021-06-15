@@ -17,9 +17,15 @@
 		71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */; };
 		71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03322E2EB8700E74F11 /* Measure.swift */; };
 		71BBE03622E2EC1400E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE03522E2EC1400E74F11 /* VideoCapture.swift */; };
+		98D01297266FC7BE0052D805 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 98D01296266FC7BE0052D805 /* FCRN.mlmodel */; };
+		98D01299266FC7C80052D805 /* FCRNFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 98D01298266FC7C80052D805 /* FCRNFP16.mlmodel */; };
+		98D0129C266FECFA0052D805 /* test1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 98D0129B266FECFA0052D805 /* test1.rtf */; };
+		98D7AE4526714E6100ECAC17 /* radar-blip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98D7AE4426714E6100ECAC17 /* radar-blip.wav */; };
+		98D7AE4A2671543B00ECAC17 /* radar-blip-minus-two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98D7AE462671543B00ECAC17 /* radar-blip-minus-two.wav */; };
+		98D7AE4B2671543B00ECAC17 /* radar-blip-minus-one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98D7AE472671543B00ECAC17 /* radar-blip-minus-one.wav */; };
+		98D7AE4C2671543B00ECAC17 /* radar-blip-plus-one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98D7AE482671543B00ECAC17 /* radar-blip-plus-one.wav */; };
+		98D7AE4D2671543B00ECAC17 /* radar-blip-plus-two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98D7AE492671543B00ECAC17 /* radar-blip-plus-two.wav */; };
 		C4A2A2BD2568DB0C001BE0BB /* LiveMetalImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */; };
-		C4A2A2C02568DB1E001BE0BB /* FCRNFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */; };
-		C4A2A2C42568DB3F001BE0BB /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */; };
 		C4A2A2C82568DBB5001BE0BB /* MetalRenderingDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2C72568DBB5001BE0BB /* MetalRenderingDevice.swift */; };
 		C4A2A2CC2568DBCA001BE0BB /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2CB2568DBCA001BE0BB /* Texture.swift */; };
 		C4A2A2CF2568DBDD001BE0BB /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2A2CE2568DBDD001BE0BB /* Maths.swift */; };
@@ -41,9 +47,15 @@
 		71BBE03122E2E9F200E74F11 /* LiveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		71BBE03322E2EB8700E74F11 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		71BBE03522E2EC1400E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		98D01296266FC7BE0052D805 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FCRN.mlmodel; path = "DepthPrediction-CoreML/FCRN.mlmodel"; sourceTree = SOURCE_ROOT; };
+		98D01298266FC7C80052D805 /* FCRNFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FCRNFP16.mlmodel; path = "DepthPrediction-CoreML/FCRNFP16.mlmodel"; sourceTree = SOURCE_ROOT; };
+		98D0129B266FECFA0052D805 /* test1.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = test1.rtf; sourceTree = "<group>"; };
+		98D7AE4426714E6100ECAC17 /* radar-blip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "radar-blip.wav"; sourceTree = "<group>"; };
+		98D7AE462671543B00ECAC17 /* radar-blip-minus-two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "radar-blip-minus-two.wav"; path = "DepthPrediction-CoreML/AudioFiles/radar-blip-minus-two.wav"; sourceTree = SOURCE_ROOT; };
+		98D7AE472671543B00ECAC17 /* radar-blip-minus-one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "radar-blip-minus-one.wav"; path = "DepthPrediction-CoreML/AudioFiles/radar-blip-minus-one.wav"; sourceTree = SOURCE_ROOT; };
+		98D7AE482671543B00ECAC17 /* radar-blip-plus-one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "radar-blip-plus-one.wav"; path = "DepthPrediction-CoreML/AudioFiles/radar-blip-plus-one.wav"; sourceTree = SOURCE_ROOT; };
+		98D7AE492671543B00ECAC17 /* radar-blip-plus-two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "radar-blip-plus-two.wav"; path = "DepthPrediction-CoreML/AudioFiles/radar-blip-plus-two.wav"; sourceTree = SOURCE_ROOT; };
 		C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMetalImageViewController.swift; sourceTree = "<group>"; };
-		C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRNFP16.mlmodel; sourceTree = "<group>"; };
-		C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRN.mlmodel; sourceTree = "<group>"; };
 		C4A2A2C72568DBB5001BE0BB /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderingDevice.swift; sourceTree = "<group>"; };
 		C4A2A2CB2568DBCA001BE0BB /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		C4A2A2CE2568DBDD001BE0BB /* Maths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
@@ -66,6 +78,7 @@
 		71BBE00A22E2D2EB00E74F11 = {
 			isa = PBXGroup;
 			children = (
+				98D0129A266FE6920052D805 /* SavedFiles */,
 				71BBE01522E2D2EB00E74F11 /* DepthPrediction-CoreML */,
 				71BBE01422E2D2EB00E74F11 /* Products */,
 			);
@@ -82,6 +95,7 @@
 		71BBE01522E2D2EB00E74F11 /* DepthPrediction-CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				98D7AE4E267154A500ECAC17 /* AudioFiles */,
 				71BBE01A22E2D2EB00E74F11 /* Main.storyboard */,
 				71BBE01622E2D2EB00E74F11 /* AppDelegate.swift */,
 				C4A2A2BC2568DB0C001BE0BB /* LiveMetalImageViewController.swift */,
@@ -103,10 +117,30 @@
 		71BBE02C22E2D3B300E74F11 /* mlmodel */ = {
 			isa = PBXGroup;
 			children = (
-				C4A2A2BF2568DB1E001BE0BB /* FCRNFP16.mlmodel */,
-				C4A2A2C32568DB3F001BE0BB /* FCRN.mlmodel */,
+				98D01298266FC7C80052D805 /* FCRNFP16.mlmodel */,
+				98D01296266FC7BE0052D805 /* FCRN.mlmodel */,
 			);
 			path = mlmodel;
+			sourceTree = "<group>";
+		};
+		98D0129A266FE6920052D805 /* SavedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				98D0129B266FECFA0052D805 /* test1.rtf */,
+			);
+			path = SavedFiles;
+			sourceTree = "<group>";
+		};
+		98D7AE4E267154A500ECAC17 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				98D7AE4426714E6100ECAC17 /* radar-blip.wav */,
+				98D7AE472671543B00ECAC17 /* radar-blip-minus-one.wav */,
+				98D7AE462671543B00ECAC17 /* radar-blip-minus-two.wav */,
+				98D7AE482671543B00ECAC17 /* radar-blip-plus-one.wav */,
+				98D7AE492671543B00ECAC17 /* radar-blip-plus-two.wav */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 		C4A2A2C62568DBA6001BE0BB /* MetalCamera */ = {
@@ -196,8 +230,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D0129C266FECFA0052D805 /* test1.rtf in Resources */,
+				98D7AE4C2671543B00ECAC17 /* radar-blip-plus-one.wav in Resources */,
 				71BBE02122E2D2EC00E74F11 /* LaunchScreen.storyboard in Resources */,
+				98D7AE4B2671543B00ECAC17 /* radar-blip-minus-one.wav in Resources */,
+				98D7AE4526714E6100ECAC17 /* radar-blip.wav in Resources */,
 				71BBE01E22E2D2EC00E74F11 /* Assets.xcassets in Resources */,
+				98D7AE4D2671543B00ECAC17 /* radar-blip-plus-two.wav in Resources */,
+				98D7AE4A2671543B00ECAC17 /* radar-blip-minus-two.wav in Resources */,
 				71BBE01C22E2D2EB00E74F11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,10 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BBE01922E2D2EB00E74F11 /* StillImageViewController.swift in Sources */,
+				98D01297266FC7BE0052D805 /* FCRN.mlmodel in Sources */,
 				C4A2A2D82568DC2B001BE0BB /* MetalVideoView.swift in Sources */,
 				C4A2A2CC2568DBCA001BE0BB /* Texture.swift in Sources */,
-				C4A2A2C42568DB3F001BE0BB /* FCRN.mlmodel in Sources */,
-				C4A2A2C02568DB1E001BE0BB /* FCRNFP16.mlmodel in Sources */,
 				C4A2A2BD2568DB0C001BE0BB /* LiveMetalImageViewController.swift in Sources */,
 				71BBE03422E2EB8700E74F11 /* Measure.swift in Sources */,
 				71BBE03222E2E9F200E74F11 /* LiveImageViewController.swift in Sources */,
@@ -224,6 +263,7 @@
 				C4A2A2CF2568DBDD001BE0BB /* Maths.swift in Sources */,
 				71BBE02E22E2D4D300E74F11 /* DrawingHeatmapView.swift in Sources */,
 				71BBE03022E2D83600E74F11 /* HeatmapPostProcessor.swift in Sources */,
+				98D01299266FC7C80052D805 /* FCRNFP16.mlmodel in Sources */,
 				71BBE01722E2D2EB00E74F11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,14 +411,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = 787TUDMR8Q;
 				INFOPLIST_FILE = "DepthPrediction-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.DepthPrediction-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = com.merwan.testFCRN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -390,14 +430,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = 787TUDMR8Q;
 				INFOPLIST_FILE = "DepthPrediction-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.DepthPrediction-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = com.merwan.testFCRN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
