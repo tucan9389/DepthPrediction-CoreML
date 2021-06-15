@@ -9,3 +9,6 @@ This app contains multiple presets for ways to process the image, each of which 
 - Haptic and audio feedback based on distances of objects
 - Readout of distance value at top of screen
 - Other usability features
+
+**Note**
+For our depth prediction project, we decided to use the FastDepth library, which is located on the FastDepth and NewFastDepth branches of this repository. This app was fine for exploration purposes, but it runs very slowly, especially on older phones, and the FastDepth model is way more efficient.
